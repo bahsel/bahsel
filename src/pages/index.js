@@ -1,12 +1,15 @@
 import * as React from "react"
-import Layout from "../components/page"
+import Page from "../components/page"
+
+import * as style from "./index.module.css"
 
 // markup
 const IndexPage = () => {
   return (
-    <Layout>
+    <Page>
       <p>bahsel</p>
-    </Layout>
+      
+    </Page>
   )
 }
 

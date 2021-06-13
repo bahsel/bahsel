@@ -1,14 +1,24 @@
 import * as React from 'react'
-import Navbar from './navbar'
 
-const Layout = ({ children }) => {
+import Navbar from './navbar'
+import Footer from './footer'
+
+import "./page.css"
+
+const Page = ({ children }) => {
   return (
     <main>
       <title>BAHSEL</title>
       <Navbar></Navbar>
-      {children}
+      <div class='wrapper'>
+        <div class='content'>
+          {children}
+        </div>
+        <div class='spacer'></div>
+        <Footer></Footer>
+      </div>
     </main>
   )
 }
 
-export default Layout
+export default Page
