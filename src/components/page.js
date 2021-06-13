@@ -1,15 +1,11 @@
 import * as React from 'react'
-import { Link } from 'gatsby'
+import Navbar from './navbar'
 
 const Layout = ({ children }) => {
   return (
     <main>
       <title>BAHSEL</title>
-      <nav>
-        <ul>
-          <li><Link to="/">Home</Link></li>
-        </ul>
-      </nav>
+      <Navbar></Navbar>
       {children}
     </main>
   )
