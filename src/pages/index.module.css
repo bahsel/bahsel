@@ -1,3 +1,61 @@
 p {
     font-size: 24px;
 }
+
+.b1 {
+    height: clamp(200px, 50vw, 800px);
+    display: grid;
+}
+
+.wrapper > div {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.dark {
+    background-color: rgba(0, 0, 0, 0.35);
+    height: 100%;
+    width: 100%;
+    grid-area: 1/1;
+    z-index: 2;
+}
+
+.ggb {
+    grid-area: 1/1;
+}
+
+.bannerContent {
+    display: flex;
+    align-items: center;
+    z-index: 3;
+    padding: 0px 5vw;
+    grid-area: 1/1;
+    color: white;
+}
+
+.b1 > .bannerContent {
+    padding-right: 0;
+}
+
+.intro h1 {
+    font-weight: 600;
+    line-height: 9vw;
+    font-size: 5vw;
+    color: #f8f8f8;
+}
+
+.scrolling {
+    box-sizing: border-box;
+    width: 25%;
+    height: 100%;
+    margin-left: auto;
+    text-align: center;
+    display: flex; 
+    align-items: center;
+    border: 1px dashed gray;
+    padding: 2vw;
+}
+
+.scrolling * {
+    font-size: 2vw;
+}

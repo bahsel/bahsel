@@ -9,7 +9,7 @@
     top: 0;
     left: 0;
     position: fixed;
-    border-bottom: 1px solid lightgray;
+    border-bottom: 1px solid rgb(172, 172, 172);
 }
 
 .navbar a {
@@ -17,13 +17,24 @@
     color: black;
 }
 
+.homeWrapper {
+    align-items: center;
+    height: inherit;
+    display: flex;
+}
+
 .logo {
-    margin-right: 15px;
-    width: 70px;
+    margin-right: 5px;
+    width: 73px;
 }
 
 .name {
-    font-size: 32px;
+    height: 25px;
+}
+
+.name svg {
+    width: auto;
+    height: 100%;
 }
 
 .container {
@@ -48,8 +59,12 @@
     align-items: center;
 }
 
+.socials a {
+    height: inherit;
+}
+
 .socials svg {
     width: auto;
     height: 100%;
-    margin-left: 18px;
+    margin-left: 16px;
 }

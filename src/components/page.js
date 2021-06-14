@@ -4,6 +4,7 @@ import Navbar from './navbar'
 import Footer from './footer'
 
 import "./page.css"
+import '../components/typography.css'
 
 const Page = ({ children }) => {
   return (

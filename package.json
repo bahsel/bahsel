@@ -7,17 +7,21 @@
     "gatsby"
   ],
   "scripts": {
-    "start": "npm install && gatsby build && node app.js",
+    "start": "npm run prepare && node app.js",
+    "latest": "npm run prepare && pm2 reload app.js",
+    "prepare": "npm install && npm run preload-fonts && gatsby build",
     "develop": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "preload-fonts": "gatsby-preload-fonts"
   },
   "dependencies": {
     "express": "^4.17.1",
     "gatsby": "^3.7.1",
     "gatsby-plugin-express": "^1.1.6",
     "gatsby-plugin-image": "^1.7.1",
+    "gatsby-plugin-preload-fonts": "^2.7.1",
     "gatsby-plugin-react-svg": "^3.0.1",
     "gatsby-plugin-sharp": "^3.7.1",
     "gatsby-source-filesystem": "^3.7.1",
