@@ -20,7 +20,7 @@ app.prepare().then(() => {
     return handle(req, res)
   })
 
-  https.createServer(credentials, app).listen({'port':443, 'host':'10.3.30.54'}, () => {
+  https.createServer(credentials, server).listen({'port':443, 'host':'10.3.30.54'}, () => {
     console.log('App listening on port 443.')
   });
 })
