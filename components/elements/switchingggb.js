@@ -22,7 +22,8 @@ class SwitchingGGB extends React.Component {
                         quality={90}
                         objectPosition='30% 10%'
                         id='dayggb'
-                        objectFit='cover'></Image>
+                        objectFit='cover'
+                        priority={true}></Image>
                 </div>
                 <div style={{ visibility: this.state.day ? 'hidden' : 'visible' }}>
                     <Image
