@@ -1,0 +1,42 @@
+@font-face {
+    font-family: 'GmarketSansTTFMedium';
+    src: url('../public/fonts/GmarketSansTTF/GmarketSansTTFMedium.ttf');
+}
+
+body, main, div, p, h1, h2 {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+    image-rendering: -webkit-optimize-contrast;
+}
+
+html, body, main, #___gatsby, #___gatsby > div {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: 'GmarketSansTTFMedium', Helvetica, sans-serif;
+    height: 100%;
+    width: 100%;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.spacer {
+    flex: 1;
+}
+
+.content {
+    /* padding-top: 65px; */
+    width: 100%;
+    margin: auto;
+}

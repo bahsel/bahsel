@@ -1,0 +1,76 @@
+.navbar {
+    box-sizing: border-box;
+    width: 100%;
+    height: 65px;
+    background-color: #e07474;
+    opacity: 0.95;
+    display: flex;
+    align-items: center;
+    padding: 0 30px 0 30px;
+    top: 0;
+    left: 0;
+    position: fixed;
+    border-bottom: 1px solid rgb(172, 172, 172);
+    z-index: 99;
+}
+
+.navbar * {
+    opacity: 1;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: black;
+}
+
+.homeWrapper {
+    align-items: center;
+    height: inherit;
+    display: flex;
+}
+
+.logo {
+    margin-right: 5px;
+    width: 73px;
+}
+
+.name {
+    width: 110px;
+    height: 100%;
+}
+
+.name svg {
+    width: auto;
+    height: 100%;
+}
+
+.container {
+    flex-grow: 2;
+    display: grid;
+    place-items: center;
+    align-items: center;
+    font-size: 18px;
+}
+
+.container ul {
+    display: flex;
+}
+
+.container li {
+    list-style: none;
+}
+
+.socials {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.socials > a {
+    width: 30px;
+    margin-left: 11px;
+}
+
+.socials > a > div {
+    height: 21px;
+}

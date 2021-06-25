@@ -1,6 +1,8 @@
 {
-  "name": "with-mongodb",
+  "name": "bahsel",
   "version": "0.1.0",
+  "private": true,
+  "description": "bahsel",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -9,6 +11,7 @@
   "dependencies": {
     "mongodb": "^3.5.9",
     "next": "latest",
+    "next-svgr": "^0.0.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
