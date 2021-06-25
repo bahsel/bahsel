@@ -1,15 +1,34 @@
-p {
-    font-size: 24px;
-}
-
-.b1 {
-    height: clamp(200px, 50vw, 800px);
-    display: grid;
-}
-
 .wrapper > div {
     width: 100%;
     box-sizing: border-box;
+    height: clamp(200px, 40vw, 800px);
+}
+
+.wrapper > div > div {
+    grid-area: 1/1;
+}
+
+.intro {
+    padding-top: 65px !important;
+}
+
+.bannerContent {
+    display: flex;
+    align-items: center;
+    z-index: 3;
+    padding: 0px 5vw;
+}
+
+.b1 {
+    /* height: clamp(200px, 55vw, 800px) !important; */
+    /* height: 50vw !important; */
+    height: 100vh !important;
+    display: grid;
+    color: white;
+}
+
+.b1 > .bannerContent {
+    padding-right: 0;
 }
 
 .dark {
@@ -18,23 +37,6 @@ p {
     width: 100%;
     grid-area: 1/1;
     z-index: 2;
-}
-
-.ggb {
-    grid-area: 1/1;
-}
-
-.bannerContent {
-    display: flex;
-    align-items: center;
-    z-index: 3;
-    padding: 0px 5vw;
-    grid-area: 1/1;
-    color: white;
-}
-
-.b1 > .bannerContent {
-    padding-right: 0;
 }
 
 .intro h1 {
@@ -52,10 +54,19 @@ p {
     text-align: center;
     display: flex; 
     align-items: center;
-    border: 1px dashed gray;
+    border: 0.5vw dashed gray;
     padding: 2vw;
+    font-size: 2vw;
 }
 
-.scrolling * {
-    font-size: 2vw;
+.b2 {
+    background-color: lightgray;
+    display: flex;
+    align-items: center;
+}
+
+.b3 {
+    background-color: goldenrod;
+    display: flex;
+    align-items: center;
 }

@@ -32,10 +32,10 @@ const Navbar = () => {
             </nav>
             <div className={style.socials}>
                 {/* socials */}
-                <a href="https://www.instagram.com/bayareaesports1">
+                <a href="https://www.instagram.com/bayareaesports1" target="_blank" rel="noopener noreferrer">
                     <InstagramLogo />
                 </a>
-                <a href="https://discord.gg/Hcuj9cM">
+                <a href="https://discord.gg/Hcuj9cM" target="_blank" rel="noopener noreferrer">
                     <DiscordLogo />
                 </a>
             </div>
