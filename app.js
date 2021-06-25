@@ -1,7 +1,6 @@
 const express = require('express')
 const fs = require('fs')
 const https = require('https')
-const app = express();
 
 const dev = process.env.NODE_ENV !== 'production'
 // const app = next({ dev });
