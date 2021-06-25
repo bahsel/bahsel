@@ -35,7 +35,8 @@
 }
 
 .name {
-    width: 110px;
+    width: 105px;
+    margin-left: 5px;
     height: 100%;
 }
 
@@ -67,10 +68,10 @@
 }
 
 .socials > a {
-    width: 30px;
-    margin-left: 11px;
+    height: 21px;
+    margin-left: 18px;
 }
 
-.socials > a > div {
+.socials > a > img {
     height: 21px;
 }

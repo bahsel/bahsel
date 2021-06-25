@@ -1,0 +1,23 @@
+.wrap {
+    width: inherit;
+    height: inherit;
+}
+
+.wrap > div {
+    width: inherit;
+    height: inherit;
+}
+
+.wrap > div > img {
+    width: inherit;
+    height: inherit;
+    object-fit: cover;
+}
+
+.day {
+    object-position: 30% 10%;
+}
+
+.night {
+    object-position: 60% 10%;
+}
