@@ -12,8 +12,8 @@ const Navbar = () => {
         <div className={style.navbar}>
             <Link href="/">
                 <a className={style.homeWrapper}>
-                    <img src='/images/banner.png' className={style.logo}></img>
-                    <img src='/images/bahsel.svg' className={style.name}></img>
+                    <img src='/images/banner.png' className={style.logo} alt='BAHSEL logo'></img>
+                    <img src='/images/bahsel.svg' className={style.name} alt=''></img>
                 </a>
             </Link>
 
@@ -26,10 +26,10 @@ const Navbar = () => {
             <div className={style.socials}>
                 {/* socials */}
                 <a href="https://www.instagram.com/bayareaesports1" target="_blank" rel="noopener noreferrer">
-                    <img src='/images/socials/instagram.svg'></img>
+                    <img src='/images/socials/instagram.svg' alt='Instagram logo'></img>
                 </a>
                 <a href="https://discord.gg/Hcuj9cM" target="_blank" rel="noopener noreferrer">
-                    <img src='/images/socials/Discord-Logo-Black.svg'></img>
+                    <img src='/images/socials/Discord-Logo-Black.svg' alt='Discord logo'></img>
                 </a>
             </div>
         </div>

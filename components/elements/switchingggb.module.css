@@ -1,14 +1,16 @@
 .wrap {
     width: inherit;
     height: inherit;
+    display: grid;
 }
 
 .wrap > div {
     width: inherit;
     height: inherit;
+    grid-area: 1/1;
 }
 
-.wrap > div > img {
+.wrap img {
     width: inherit;
     height: inherit;
     object-fit: cover;

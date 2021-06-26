@@ -15,8 +15,10 @@ body, main, div, p, h1, h2 {
     image-rendering: -webkit-optimize-contrast;
 }
 
-html, body, main, #___gatsby, #___gatsby > div {
+html, body, main {
     height: 100%;
+    max-width: 100%;
+    width: 100%;
 }
 
 body {
@@ -24,6 +26,10 @@ body {
     font-family: 'GmarketSansTTFMedium', Helvetica, sans-serif;
     height: 100%;
     width: 100%;
+}
+
+body div {
+    overflow: hidden;
 }
 
 .wrapper {

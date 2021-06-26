@@ -9,6 +9,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "framer-motion": "^4.1.17",
     "mongodb": "^3.5.9",
     "next": "latest",
     "next-svgr": "^0.0.2",
