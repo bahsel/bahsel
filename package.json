@@ -9,6 +9,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "express": "^4.17.1",
     "framer-motion": "^4.1.17",
     "mongodb": "^3.5.9",
     "next": "latest",
