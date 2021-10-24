@@ -2,8 +2,10 @@
     /* height: 26px; */
 }
 
-.wrapper > div {
+.wrapper div {
     position: relative;
-    max-width: 100%;
-    height: 100%;
+    width: inherit;
+    height: inherit;
+    /* max-width: 100%;
+    height: 100%; */
 }

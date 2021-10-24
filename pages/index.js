@@ -1,5 +1,3 @@
-import Image from 'next/image'
-import * as React from "react"
 import Layout from "../components/layout"
 
 import * as style from "./index.module.css"

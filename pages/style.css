@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'GmarketSansTTFMedium';
-    src: url('../public/fonts/GmarketSansTTF/GmarketSansTTFMedium.ttf');
+    src: url('/fonts/GmarketSansTTF/gmarketsansttfmedium-webfont.woff2') format('woff2');
 }
 
 body, main, div, p, h1, h2 {

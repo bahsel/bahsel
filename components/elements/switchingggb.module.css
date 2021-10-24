@@ -2,12 +2,19 @@
     width: inherit;
     height: inherit;
     display: grid;
+    position: relative;
 }
 
 .wrap > div {
     width: inherit;
     height: inherit;
     grid-area: 1/1;
+    position: relative;
+}
+
+.wrap div {
+    width: 100%;
+    height: 100%;
 }
 
 .wrap img {

@@ -1,4 +1,3 @@
-import * as React from 'react'
 import Script from 'next/script'
 import Head from 'next/head'
 
@@ -20,6 +19,10 @@ const Layout = ({ children }) => {
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#ffffff"></meta>
+
+        <link rel="preload" href="/fonts/GmarketSansTTF/gmarketsansttfmedium-webfont.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+
+        <html lang='en'></html>
       </Head>
       <Script type='module'>{
         function fadeIn() {

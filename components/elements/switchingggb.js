@@ -1,7 +1,12 @@
 import React, { useState, useEffect } from "react"
 import { motion } from "framer-motion"
 
+import Image from 'next/image'
+
 import style from './switchingggb.module.css'
+
+import dayggb from '../../public/images/bgs/dayggb.jpg'
+import nightggb from '../../public/images/bgs/nightggb.png'
 
 const fades = {
     show: {
@@ -14,27 +19,38 @@ const fades = {
 }
 
 const SwitchingGGB = () => {
+    const [src, setSrc] = useState('/');
+    const [imgSet, setImgSet] = useState(false);
     const [loaded, setLoaded] = useState(false);
-    const [day, setDay] = useState(true);
 
     useEffect(() => {
         var now = new Date();
-        if (now.getHours() < 7 || now.getHours() > 19) {
-            setDay(false);
-        }
-        setLoaded(true)
-    })
+
+        var day = !(now.getHours() < 7 || now.getHours() > 19);
+
+        setSrc(day ? '/images/bgs/dayggb.jpg' : '/images/bgs/nightggb.png');
+
+        setLoaded(false);
+        setImgSet(true);
+    }, []);
 
     return (
         <div className={style.wrap}>
-            <motion.div initial='hide' animate={day ? (loaded ? 'show' : 'hide') : 'hide'} variants={fades}>
-                <img src='/images/bgs/dayggb.jpg' className={style.day}></img>
-            </motion.div>
-            <motion.div initial='hide' animate={!day ? (loaded ? 'show' : 'hide') : 'hide'} variants={fades}>
-                <img src='/images/bgs/nightggb.png' className={style.night}></img>
+            <motion.div initial='hide' animate={imgSet && loaded ? 'show' : 'hide'} variants={fades}>
+                <Image
+                    src={src}
+                    placeholder='blurred'
+                    quality={100}
+                    objectPosition='30% 10%'
+                    id='dayggb'
+                    objectFit='cover'
+                    onLoadingComplete={() => {setLoaded(true)}}
+                    layout='fill'
+                    alt=''
+                    ></Image>
             </motion.div>
         </div>
-    )
+    );
 }
 
 export default SwitchingGGB
