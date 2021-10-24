@@ -11,11 +11,13 @@
   "dependencies": {
     "express": "^4.17.1",
     "framer-motion": "^4.1.17",
-    "mongodb": "^3.5.9",
-    "next": "latest",
+    "mongodb": "^3.7.3",
+    "next": "^11.1.2",
     "next-svgr": "^0.0.2",
+    "prop-types": "^15.7.2",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "sharp": "^0.29.2"
   },
   "license": "MIT"
 }
