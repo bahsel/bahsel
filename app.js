@@ -9,8 +9,8 @@ const app = next(false);
 const handle = app.getRequestHandler();
 
 var credentials = {
-	key: fs.readFileSync('./ssl/privatekey.pem'),
-	cert: fs.readFileSync('./ssl/certificate.pem')
+	key: fs.readFileSync('./cfg/privatekey.pem'),
+	cert: fs.readFileSync('./cfg/certificate.pem')
 };
 
 app.prepare().then(() => {
