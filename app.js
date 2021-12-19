@@ -1,3 +1,5 @@
+// the server is run on express, so that we can serve next pages and
+// run sockets at the same time, from the same server.
 const express = require('express')
 const fs = require('fs')
 const https = require('https')

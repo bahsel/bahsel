@@ -5,9 +5,6 @@ import Image from 'next/image'
 
 import style from './switchingggb.module.css'
 
-import dayggb from '../../public/images/bgs/dayggb.jpg'
-import nightggb from '../../public/images/bgs/nightggb.png'
-
 const fades = {
     show: {
         opacity: 1,

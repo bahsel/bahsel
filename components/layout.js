@@ -20,7 +20,7 @@ const Layout = ({ children }) => {
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#ffffff"></meta>
 
-        <link rel="preload" href="/fonts/GmarketSansTTF/gmarketsansttfmedium-webfont.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+        <link rel="preload" href="/fonts/GmarketSansTTF/gmarketsansttfmedium-webfont.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
 
         <html lang='en'></html>
       </Head>
