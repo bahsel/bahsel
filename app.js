@@ -1,37 +1,27 @@
-// the server is run on express, so that we can serve next pages and
-// run sockets at the same time, from the same server.
-const express = require('express')
-const fs = require('fs')
-const https = require('https')
-const next = require('next')
+const HOST = '10.3.30.54';
 
-const dev = process.env.NODE_ENV !== 'production'
-// const app = next({ dev });
-const app = next(false);
-const handle = app.getRequestHandler();
+const fs = require('fs')
+var http = require('http');
+const https = require('https')
+
+// server
+const setupServer = require('./server');
 
 var credentials = {
 	key: fs.readFileSync('./cfg/privatekey.pem'),
 	cert: fs.readFileSync('./cfg/certificate.pem')
 };
 
-app.prepare().then(() => {
-  const server = express()
+server = setupServer();
 
-  server.all('*', (req, res) => {
-    return handle(req, res)
-  })
-
-  https.createServer(credentials, server).listen({'port':443, 'host':'10.3.30.54'}, () => {
-    console.log('App listening on port 443.')
-  });
-})
+https.createServer(credentials, server).listen({ 'port': 443, 'host': HOST }, () => {
+  console.log('App listening on port 443.')
+});
 
 // Redirect from http port 80 to https
-var http = require('http');
 http.createServer(function (req, res) {
-    res.writeHead(301, { "Location": "https://" + req.headers['host'] + req.url });
-    res.end();
-}).listen(80, '10.3.30.54', () => {
-	console.log('App redirecting http traffic to https.')
+  res.writeHead(301, { "Location": "https://" + req.headers['host'] + req.url });
+  res.end();
+}).listen(80, HOST, () => {
+  console.log('App redirecting http traffic to https.')
 });

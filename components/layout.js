@@ -1,12 +1,12 @@
-import Script from 'next/script'
 import Head from 'next/head'
-
-import Navbar from './navbar'
+import Script from 'next/script'
 import Footer from './footer'
+import Navbar from './navbar'
+
 
 const Layout = ({ children }) => {
   return (
-    <main>
+    <div>
       <Head>
         <title>BAHSEL</title>
         <meta property="og:title" content="BAHSEL" key="title" />
@@ -21,25 +21,24 @@ const Layout = ({ children }) => {
         <meta name="theme-color" content="#ffffff"></meta>
 
         <link rel="preload" href="/fonts/GmarketSansTTF/gmarketsansttfmedium-webfont.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
-
-        <html lang='en'></html>
       </Head>
       <Script type='module'>{
         function fadeIn() {
-          this.style.transition= 'opacity 1s';
+          this.style.transition = 'opacity 1s';
           this.style.opacity = '1';
         }
       }</Script>
-      <title>BAHSEL</title>
       <Navbar></Navbar>
-      <div className='wrapper'>
-        <div className='content'>
-          {children}
+      <main>
+        <div className='wrapper'>
+          <div className='content'>
+            {children}
+          </div>
+          <div className='spacer'></div>
+          <Footer></Footer>
         </div>
-        <div className='spacer'></div>
-        <Footer></Footer>
-      </div>
-    </main>
+      </main>
+    </div>
   )
 }
 

@@ -1,0 +1,13 @@
+.grid {
+    display: grid;
+    padding: 2vw;
+    width: 80%;
+    margin: auto;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 5%;
+    row-gap: 2vw;
+}
+
+.grid>button {
+    height: 5vw;
+}

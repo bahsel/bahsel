@@ -13,6 +13,7 @@ body, main, div, p, h1, h2 {
     vertical-align: baseline;
     background: transparent;
     image-rendering: -webkit-optimize-contrast;
+    box-sizing: border-box;
 }
 
 html, body, main {
@@ -29,7 +30,7 @@ body {
 }
 
 body div {
-    overflow: hidden;
+    height: 100%;
 }
 
 .wrapper {
@@ -45,5 +46,6 @@ body div {
 .content {
     padding-top: 65px;
     width: 100%;
+    height: auto;
     margin: auto;
 }

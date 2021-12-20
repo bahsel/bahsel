@@ -19,7 +19,9 @@ const IndexPage = () => {
               Bay Area High School <br /> Esports League
             </h1>
             <div className={style.scrolling}>
-              <p>Coming soon...</p>
+                <p>
+                  Coming soon...
+                </p>
             </div>
           </div>
         </div>
@@ -31,7 +33,9 @@ const IndexPage = () => {
                 Tournaments for high schoolers, by high schoolers.
               </p>
               <div className={style.comingsoon}>
-                Coming soon...
+                <p>
+                  Coming soon...
+                </p>
               </div>
             </div>
           </div>
@@ -44,7 +48,9 @@ const IndexPage = () => {
                 A community: more than just competition.
               </p>
               <div className={style.comingsoon}>
-                Coming soon...
+                <p>
+                  Coming soon...
+                </p>
               </div>
             </div>
           </div>

@@ -27,25 +27,23 @@ if (!cached) {
 }
 
 export async function connectToDatabase() {
-  // if (cached.conn) {
-  //   return cached.conn
-  // }
+  if (cached.conn) {
+    return cached.conn
+  }
 
-  // if (!cached.promise) {
+  if (!cached.promise) {
     const opts = {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     }
 
-    cached.promise = MongoClient.connect(MONGODB_URI, opts).then(async (client) => {
-      console.log(await client.db(MONGODB_DB).collections())
-
+    cached.promise = MongoClient.connect(MONGODB_URI, opts).then((client) => {
       return {
         client,
-        db: client.db(MONGODB_DB),
+        db: client.db(MONGODB_DB)
       }
     })
-  // }
+  }
   cached.conn = await cached.promise
 
   return cached.conn
