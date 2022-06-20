@@ -1,77 +1,73 @@
-## Example app using MongoDB
+# BAHSEL Website
 
-[MongoDB](https://www.mongodb.com/) is a general purpose, document-based, distributed database built for modern application developers and for the cloud era. This example will show you how to connect to and use MongoDB as your backend for your Next.js app.
+A proposed framework for the BAHSEL website backend. The proposal is a funky experimental stack where the server runs express.js and MongoDB, serving a Next.js site while having open socket.io ports.
 
-If you want to learn more about MongoDB, visit the following pages:
-
-- [MongoDB Atlas](https://mongodb.com/atlas)
-- [MongoDB Documentation](https://docs.mongodb.com/)
-
-## Deploy your own
-
-Once you have access to the environment variables you'll need, deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example):
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-mongodb&project-name=with-mongodb&repository-name=with-mongodb&env=MONGODB_URI,MONGODB_DB&envDescription=Required%20to%20connect%20the%20app%20with%20MongoDB)
-
-## How to use
-
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
-
-```bash
-npx create-next-app --example with-mongodb with-mongodb-app
-# or
-yarn create next-app --example with-mongodb with-mongodb-app
+```
+express.js ─────────► Next.js client
+    │                        ▲
+    │                        │
+    ├─────► MongoDB ─────────┤
+    │                        │
+    └─────► socket.io ───────┘
 ```
 
-## Configuration
+## Why????
 
-### Set up a MongoDB database
+heh,
 
-Set up a MongoDB database either locally or with [MongoDB Atlas for free](https://mongodb.com/atlas).
+### Why Next.js?
 
-### Set up environment variables
+[Next.js](https://nextjs.org/) is a [React](https://reactjs.org/) framework. 
 
-Copy the `env.local.example` file in this directory to `.env.local` (which will be ignored by Git):
+_Why React?_
 
-```bash
-cp .env.local.example .env.local
-```
+Once a React app is built, the intent is that the page will never have to refresh to navigate (the React app will build and display new elements instead of the client asking for a new HTML document for each new page). React also has components, which means that you can define a header and use it in multiple different pages (object oriented web programming :O). There are some [other benefits](https://www.freecodecamp.org/news/why-use-react-for-web-development/) of React, too.
 
-Set each variable on `.env.local`:
+_Why Next.js?_
 
-- `MONGODB_URI` - Your MongoDB connection string. If you are using [MongoDB Atlas](https://mongodb.com/atlas) you can find this by clicking the "Connect" button for your cluster.
-- `MONGODB_DB` - The name of the MongoDB database you want to use.
+In vanilla React, an empty HTML file with a ton of javascript is sent to the client. The client has to evaluate that ton of javascript to build an interactive React app before being able to show the desired landing page. 
 
-### Run Next.js in development mode
+Next.js 'compiles' each page into HTML before sending it to the client, so the client only has to evaluate the HTML before the desired landing page is visible. Then, it evaluates javascript to 'rehydrate' the React app, essentially building a dynamic React app out of the static pre-generated static landing page. There are a few benefits to this:
+- The page loads relatively quickly no matter how potato the viewer's device (or phone) is.
+- Enhanced SEO: because React pages have no data until the app is built via the javascript being ran, search engine scrapers (which usually don't evaluate javascript) get nearly no information from vanilla React apps. Because Next.js delivers a generated static site, the search engine still has a full site to parse.
 
-```bash
-npm install
-npm run dev
+[Here's an article](https://tsh.io/blog/what-is-next-js-used-for/) that probably explains all of this better.
 
-# or
+### Why socket.io?
 
-yarn install
-yarn dev
-```
+[socket.io](https://socket.io/) makes possible socket connections between the server and the client. Typically, the client has to request the server to receive any information. With a socket, the server is also able to 'push' information to the client (and the same in the reverse direction), making websites with changing quickly changing data possible. 
 
-Your app should be up and running on [http://localhost:3000](http://localhost:3000)! If it doesn't work, post on [GitHub discussions](https://github.com/vercel/next.js/discussions).
+I imagine using this for stream overlays, where someone can input team names, reset timers, etc. from a client, which (through a socket connection) alerts the server, which (through a socket connection) alerts any streamers using a page of our website as a stream input.
 
-You will either see a message stating "You are connected to MongoDB" or "You are NOT connected to MongoDB". Ensure that you have provided the correct `MONGODB_URI` and `MONGODB_DB` environment variables.
+### Why MongoDB?
 
-When you are successfully connected, you can refer to the [MongoDB Node.js Driver docs](https://mongodb.github.io/node-mongodb-native/3.4/tutorials/collections/) for further instructions on how to query your database.
+With a [MongoDB](https://www.mongodb.com/) database, we can store for example tournament information, team and school names, descriptions, and photos, etc and dynamically have pages for all these tournamenets/teams/schools within our website. This is possible through a combination of [dynamic routes](https://nextjs.org/docs/routing/dynamic-routes) and [getServerSideProps](https://nextjs.org/docs/basic-features/data-fetching/get-server-side-props).
 
-## Deploy on Vercel
+I was hoping for the front page to feature a scrolling collage of teams' or schools' logos, similar to the scrolling images on [GenG's main page](https://geng.gg/), by pulling images from our MongoDB database. We can also upload graphics for upcoming events onto our database and serve that as an element for streamers to use.
 
-You can deploy this app to the cloud with [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+### Why express.js?
 
-#### Deploy Your Local Project
+With [express.js](https://expressjs.com/), we can split incoming requests into different routes (e.g. the stuff after the website domain: `https://mydomain.com/<route>/<more route wheee>`). This makes it so that we can make a route for socket.io traffic.
 
-To deploy your local project to Vercel, push it to GitHub/GitLab/Bitbucket and [import to Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example).
+### Do we really need all this?!?!?!?!
 
-**Important**: When you import your project on Vercel, make sure to click on **Environment Variables** and set them to match your `.env.local` file.
+no. i'm just having fun. 
 
-#### Deploy from Our Template
+I think we can definitely handle Next.js at minimum, though even that's optional -- we could use only a React app (or even just vanilla HTML).
 
-Alternatively, you can deploy using our template by clicking on the Deploy button below.
+express.js is required if we want to be able to separate traffic for socket.io. It also allows us to protect some routes behind authentification, though Next.js [does have this](https://nextjs.org/docs/authentication) built-in.
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-mongodb&project-name=with-mongodb&repository-name=with-mongodb&env=MONGODB_URI,MONGODB_DB&envDescription=Required%20to%20connect%20the%20app%20with%20MongoDB)
+socket.io is completely optional, and it might be used very minimally if we don't do stuff for streams. but it would be soooo sick...
+
+MongoDB is also optional, we could hard code every page. but a) where's the fun in that and b) then we can't let clubs edit their own page (and have it update in the database and therefore the website) which is sad :(
+
+## Getting Started (Developing pages)
+
+To work on pages within the site, you can run Next.js's developer server on your computer:
+1. Install (Node.js)[https://nodejs.org/en/]
+2. Navigate to this repository's directory and run `npm install` to install all dependencies defined in `package.json`. (If you use `npm install <dependency>` in this directory, it will automatically be added to `package.json`).
+3. Run `npm run dev` to start the Next.js developer server. Changes should update live.
+
+## Deploying (to an actual server)
+
+coming soon to theatres near you
