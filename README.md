@@ -61,6 +61,32 @@ socket.io is completely optional, and it might be used very minimally if we don'
 
 MongoDB is also optional, we could hard code every page. but a) where's the fun in that and b) then we can't let clubs edit their own page (and have it update in the database and therefore the website) which is sad :(
 
+## what are all these folders and files
+
+oh, i was hoping you'd know... cuz i don't...
+```
+root
+│
+├─── pages: Pages of the site (the React app)
+│
+├─┬─ components: Components of the site
+│ │
+│ ├─── elements: Specific elements used on different pages
+│ │
+│ └─── templates: Components that can be reused on different pages
+│
+├─── public: Files that Next.js automatically serves on the root level. Images, icons, fonts, ...
+│
+├─── util: JavaScript files used by the backend
+│
+│
+├─── server.js: Exports an express.js server
+│
+├─── app.js: Production app. Sets up the server (from server.js) to listen on HTTPS (using certificate) and redirect HTTP traffic to HTTPS.
+│
+└─── devapp.js: For development. Sets up the server to listen on localhost:3000. This is different from next dev because it's the whole shebang: express routes, sockets, etc.
+```
+
 ## Getting Started (Developing pages)
 
 To work on pages within the site, you can run Next.js's developer server on your computer:
