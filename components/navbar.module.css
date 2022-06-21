@@ -22,6 +22,7 @@
 .navbar a {
     text-decoration: none;
     color: black;
+    width: auto;
 }
 
 .homeWrapper {
@@ -38,13 +39,14 @@
 
 .logo {
     margin-right: 5px;
-    width: 73px;
+    width: 85px;
+    height: auto;
 }
 
 .name {
     width: 105px;
     margin-left: 5px;
-    height: 100%;
+    height: auto;
 }
 
 .name svg {
@@ -80,7 +82,7 @@
 }
 
 .socials>a * {
-    height: 21px;
+    height: 24px;
 }
 
 @media (max-width: 500px) {
