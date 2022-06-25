@@ -39,6 +39,12 @@ const Navbar = () => {
                 </ul>
             </nav>
 
+            <nav className={style.container}>
+                <ul>
+                    <li><Link href="/about"><a>About</a></Link></li>
+                </ul>
+            </nav>
+
             <div className={style.socials}>
                 {/* socials */}
                 <a href="https://www.instagram.com/bayareaesports1" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
